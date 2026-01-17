@@ -1,0 +1,371 @@
+<html>
+<head>
+  <!-- Link the style sheet here -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+    }
+    
+    .contact-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, #20b2aa, #008b8b);
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    
+    .contact-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .info-icon {
+      background-color: #20b2aa;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+      font-size: 1.3rem;
+    }
+    
+    .info-details h3 {
+      color: #008b8b;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+    }
+    
+    .info-details p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 5px;
+    }
+    
+    .hours-table {
+      width: 100%;
+      margin-top: 10px;
+      border-collapse: collapse;
+    }
+    
+    .hours-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .hours-table .day {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .hours-table .time {
+      text-align: right;
+      color: #666;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #008b8b;
+      font-weight: bold;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: #20b2aa;
+      box-shadow: 0 0 0 2px rgba(32, 178, 170, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: linear-gradient(135deg, #20b2aa, #008b8b);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .map-placeholder {
+      background: linear-gradient(135deg, #20b2aa, #008b8b);
+      height: 250px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-content {
+        flex-direction: column;
+      }
+      
+      .contact-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .contact-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="contact-container">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>We're here to help! Whether you're looking for your dream car, need service assistance, or just have questions about our inventory, our team is ready to assist you. Reach out to us through any of the following methods.</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-details">
+            <h3>Visit Our Dealership</h3>
+            <p>Sunshine Auto Group</p>
+            <p>1234 Automotive Boulevard</p>
+            <p>Los Angeles, CA 90045</p>
+            <p>United States</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-details">
+            <h3>Phone & Email</h3>
+            <p><strong>Sales:</strong> (310) 555-1234</p>
+            <p><strong>Service:</strong> (310) 555-5678</p>
+            <p><strong>Finance:</strong> (310) 555-9012</p>
+            <p><strong>Email:</strong> info@sunshineauto.com</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div class="info-details">
+            <h3>Business Hours</h3>
+            <table class="hours-table">
+              <tr>
+                <td class="day">Monday - Friday</td>
+                <td class="time">8:00 AM - 8:00 PM</td>
+              </tr>
+              <tr>
+                <td class="day">Saturday</td>
+                <td class="time">9:00 AM - 7:00 PM</td>
+              </tr>
+              <tr>
+                <td class="day">Sunday</td>
+                <td class="time">10:00 AM - 6:00 PM</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">🚗</div>
+          <div class="info-details">
+            <h3>Departments</h3>
+            <p><strong>New Vehicles:</strong> ext. 101</p>
+            <p><strong>Pre-Owned Vehicles:</strong> ext. 102</p>
+            <p><strong>Service Center:</strong> ext. 201</p>
+            <p><strong>Parts Department:</strong> ext. 202</p>
+            <p><strong>Finance Office:</strong> ext. 301</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3 style="color: #008b8b; margin-bottom: 25px; font-size: 1.8rem;">Send Us a Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select class="form-control" id="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="sales">Vehicle Sales Inquiry</option>
+              <option value="service">Service Appointment</option>
+              <option value="finance">Financing Questions</option>
+              <option value="parts">Parts Inquiry</option>
+              <option value="general">General Information</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea class="form-control" id="message" placeholder="Please provide details about your inquiry..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="map-placeholder">
+      <div>
+        <h3>Find Us on the Map</h3>
+        <p>Located conveniently in central Los Angeles with easy freeway access and ample parking.</p>
+        <p><em>[Interactive Map Would Display Here]</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Form submission handling
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    
+    // Simple validation
+    if(name && email && subject) {
+      // In a real application, this would send data to a server
+      alert('Thank you, ' + name + '! Your message has been sent. We will contact you at ' + email + ' within 24 hours.');
+      document.getElementById('contactForm').reset();
+    }
+  });
+</script>
+
+</html>
