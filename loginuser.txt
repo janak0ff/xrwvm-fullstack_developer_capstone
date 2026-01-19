@@ -1,0 +1,6 @@
+theia@theia-janakshresth:/home/project$ curl -X POST "https://janakshresth-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/djangoapp/login" \
+  -H "Content-Type: application/json" \
+  -d '{"userName": "janak", "password": "janak"}'
+{"userName": "janak", "status": "Authenticated"}theia@theia-janakshresth:/home/p
+theia@theia-janakshresth:/home/project$ 
+
